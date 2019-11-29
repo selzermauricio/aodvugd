@@ -1,0 +1,23 @@
+//uso de funcionalidades    //valor por defecto
+Aodv_USE_HELLO 				//true
+Aodv_USE_ERS 				//true
+Aodv_USE_RREP_G 			//false
+Aodv_USE_DEST_ONLY			//false
+Aodv_USE_LOCAL_REPAIR 		//false
+
+//Configuration Parameters  //valor por defecto
+
+Aodv_ACTIVE_ROUTE_TIMEOUT   //3000 Milliseconds
+Aodv_ALLOWED_HELLO_LOSS     //2
+Aodv_HELLO_INTERVAL 	    //1000; Milliseconds
+Aodv_LOCAL_ADD_TTL  		//2
+Aodv_NET_DIAMETER  		    //35
+Aodv_NODE_TRAVERSAL_TIME    //40 milliseconds
+Aodv_RERR_RATELIMIT  	    //10
+Aodv_RREQ_RETRIES	        //2
+Aodv_RREQ_RATELIMIT 		//10
+Aodv_TIMEOUT_BUFFER  	    //2
+Aodv_TTTL_START				//1	 cambia a 2 si usa HELLO
+Aodv_TTL_INCREMENT 		    //2
+Aodv_TTL_THRESHOLD   		//7
+Aodv_K_DELETE_PERIOD 		//5

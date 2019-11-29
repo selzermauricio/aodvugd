@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+  <!-- rreq_movimientos -->
+  <appender name="rreq_movimientos" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/rreq_movimientos.csv" />
+    <param name="Append" value="false" />	    
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>	    
+  </appender>
+
+    <!-- rreq_mensajes -->
+  <appender name="rreq_mensajes" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/rreq_mensajes.csv" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>     
+  </appender>|
+
+      <!-- rreq_buffer -->
+  <appender name="rreq_buffer" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/rreq_buffer.csv" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>     
+  </appender>
+
+  <!-- rrep_movimientos -->
+  <appender name="rrep_movimientos" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/rrep_movimientos.csv" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>     
+  </appender>
+
+  <!-- routing_table -->
+  <appender name="routing_table" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/routing_table.csv" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>     
+  </appender>
+    <!-- dicovery -->
+  <appender name="discovery" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/discovery.csv" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>     
+  </appender>
+      <!-- ping -->
+  <appender name="ping" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/ping.csv" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%m%n"/>
+    </layout>     
+  </appender>
+
+ <!-- errores -->
+  <appender name="errores_assert" class="org.apache.log4j.FileAppender">
+    
+    <param name="File"   value="output/errores_asserts.log" />
+    <param name="Append" value="false" />     
+    
+    <layout class="org.apache.log4j.TTCCLayout">
+      <param name="DateFormat" value="ISO8601" />
+    </layout>    
+  </appender>
+
+  <!-- general -->
+  <appender name="general" class="org.apache.log4j.FileAppender">
+    <param name="File" value="output/general.log" />
+    <param name="Append" value="false" />
+    <layout class="org.apache.log4j.TTCCLayout">
+      <param name="DateFormat" value="ISO8601" />
+    </layout>		
+  </appender>
+  
+  <logger name="rreq_movimientos">
+    <level value="debug" />
+    <appender-ref ref="rreq_movimientos" />
+  </logger> 
+  
+  <logger name="rreq_mensajes">
+    <level value="debug" />
+    <appender-ref ref="rreq_mensajes" />
+  </logger> 
+
+  <logger name="rreq_buffer">
+    <level value="debug" />
+    <appender-ref ref="rreq_buffer" />
+  </logger> 
+
+   <logger name="errores_assert">
+    <level value="debug" />
+    <appender-ref ref="errores_assert" />
+  </logger>
+  
+  <logger name="rrep_movimientos">
+    <level value="debug" />
+    <appender-ref ref="rrep_movimientos" />
+  </logger> 
+
+  <logger name="routing_table">
+    <level value="debug" />
+    <appender-ref ref="routing_table" />
+  </logger> 
+
+  <logger name="discovery">
+    <level value="debug" />
+    <appender-ref ref="discovery" />
+  </logger> 
+
+   <logger name="ping">
+    <level value="debug" />
+    <appender-ref ref="ping" />
+  </logger> 
+  
+  <root>
+    <priority value ="debug" />
+    <appender-ref ref="general" />
+  </root>
+  
+</log4j:configuration>

@@ -1,0 +1,51 @@
+   A node SHOULD NOT originate more than RREQ_RATELIMIT RREQ messages per second.
+
+6.2. Route Table Entries and Precursor Lists
+ Each time a route is used to forward a data packet, its Active Route
+   Lifetime field of the source, destination and the next hop on the
+   path to the destination is updated to be no less than the current
+   time plus ACTIVE_ROUTE_TIMEOUT.  Since the route between each
+   originator and destination pair is expected to be symmetric, the
+   Active Route Lifetime for the previous hop, along the reverse path
+   back to the IP source, is also updated to be no less than the current
+   time plus ACTIVE_ROUTE_TIMEOUT.  The lifetime for an Active Route is
+   updated each time the route is used regardless of whether the
+   destination is a single node or a subnet.
+
+
+//TODO despertar proceso HELLO
+EN processo hello.cpp
+en el metodo para iniciar el proceso ver de activar desde un sleep o algo
+de esta forma no consume si no se usa y cuando recibe un hello se puede despertar
+
+
+//TODO
+  /*6.11. Route Error (RERR) Messages, Route Expiry and Route Deletion
+    case(ii) if it gets a data packet destined to a node for which it
+    does not have an active route and is not repairing (if
+    using local repair)*/
+1ro por lo que dice ahi si hay un descubrimiento que no es de reparacion 
+se me complica..porque no se puede empezar otro descubrimiento al mismo destino,
+y cuando termina el descubrimiento comun no va a tirar el RERR al no encontrar 
+
+cuando ocurre algun break dice que se puede utilizar LocalRepair pero 
+que hay que verificar si no se esta reparando a reparar la ruta..
+pero no era que si por ej NO utilizo rrep-g y un nodo intermedio responde 
+el rreq de algun otro nodo y cuando me llega el mensaje yo no voy a tener 
+la ruta para responder tengo que empezar un discovery..
+capaz que se refiere solo al reenvio.
+Tengo!! que ver eso porque tengo que poder responder si me llega un mensaje
+que es para mi.
+
+
+  handleLlegoRERR ( const AodvUgdRERR& rerr)
+  throw()
+  {
+    //TODO registrar RERR source
+    //TODO verificar RERR.n=true
+
+    TODO de paso ver si se registra cualquier mensaje que llega desde el source, asi hago una unica funcion y registro el source para cualquier mensaje
+
+
+
+
